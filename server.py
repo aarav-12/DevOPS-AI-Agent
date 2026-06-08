@@ -1,7 +1,9 @@
 from mcp.server.fastmcp import FastMCP
+from dotenv import load_dotenv
+
 
 mcp = FastMCP("devops-demo")
-
+load_dotenv()
 @mcp.tool()
 def get_system_status() -> str:
     """Get the current status of all production services.
