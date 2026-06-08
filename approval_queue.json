@@ -1,0 +1,13 @@
+[
+  {
+    "id": "b203fbaf",
+    "tool": "rollback_deployment",
+    "params": {
+      "name": "payments"
+    },
+    "context": "testing",
+    "status": "approved",
+    "submitted_at": "2026-06-08T10:55:20.592328+00:00",
+    "approved_at": "2026-06-08T10:56:27.436205+00:00"
+  }
+]
