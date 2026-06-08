@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "devops-demo": {
+      "command": "python",
+      "args": [
+        "C:\\Users\\aarav\\demo-mcp\\server.py"
+      ]
+    }
+  }
+}
