@@ -15,12 +15,12 @@ def get_client():
 
 
 def get_recent_commits_impl(
-    repo_name: str,
+    repo: str,
     branch: str = "main",
     n: int = 5
 ) -> str:
 
-    repo = get_client().get_repo(repo_name)
+    repo = get_client().get_repo(repo)
 
     commits = list(
         repo.get_commits(sha=branch)
@@ -40,11 +40,11 @@ def get_recent_commits_impl(
 
 
 def get_pr_status_impl(
-    repo_name: str,
+    repo: str,
     pr_number: int
 ) -> str:
 
-    repo = get_client().get_repo(repo_name)
+    repo = get_client().get_repo(repo)
 
     pr = repo.get_pull(pr_number)
 
@@ -64,4 +64,16 @@ def get_pr_status_impl(
         f"Status: {pr.state}\n"
         f"Checks: {check_summary}\n"
         f"Mergeable: {pr.mergeable}"
+    )
+
+
+def get_workflow_run_impl(repo: str, run_id: int) -> str:
+    workflow_run = get_client().get_repo(repo).get_workflow_run(run_id)
+    return (
+        f"Run #{run_id}: {workflow_run.name}\n"
+        f"Status:     {workflow_run.status}\n"
+        f"Conclusion: {workflow_run.conclusion}\n"
+        f"Branch:     {workflow_run.head_branch}\n"
+        f"Commit:     {workflow_run.head_sha[:7]}\n"
+        f"Started:    {workflow_run.run_started_at}"
     )
