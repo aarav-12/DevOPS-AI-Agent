@@ -9,5 +9,70 @@
     "status": "approved",
     "submitted_at": "2026-06-08T10:55:20.592328+00:00",
     "approved_at": "2026-06-08T10:56:27.436205+00:00"
+  },
+  {
+    "id": "50cdccaf",
+    "tool": "rollback_deployment",
+    "params": {
+      "deployment": "payments"
+    },
+    "context": "testing",
+    "status": "pending",
+    "submitted_at": "2026-07-02T14:24:35.254889+00:00"
+  },
+  {
+    "id": "d2ed88f1",
+    "tool": "rollback_deployment",
+    "params": {
+      "deployment": "payments"
+    },
+    "context": "testing",
+    "status": "executed",
+    "submitted_at": "2026-07-02T14:26:34.915074+00:00",
+    "approved_at": "2026-07-02T14:26:35.168332+00:00",
+    "result": "[STUB] Rolled back deployment 'payments' in namespace 'default'",
+    "executed_at": "2026-07-02T14:26:35.184599+00:00"
+  },
+  {
+    "id": "1439c538",
+    "tool": "rollback_deployment",
+    "params": {
+      "deployment": "payments-service",
+      "namespace": "default"
+    },
+    "context": "",
+    "status": "executed",
+    "submitted_at": "2026-07-02T19:08:44.073291+00:00",
+    "approved_at": "2026-07-02T19:08:44.735019+00:00",
+    "result": "[STUB] Rolled back deployment 'payments-service' in namespace 'default'",
+    "executed_at": "2026-07-02T19:08:44.755262+00:00"
+  },
+  {
+    "id": "08bf1654",
+    "tool": "rollback_deployment",
+    "params": {
+      "deployment": "payments-service",
+      "namespace": "default"
+    },
+    "context": "",
+    "status": "executed",
+    "submitted_at": "2026-07-02T19:11:09.213883+00:00",
+    "approved_at": "2026-07-02T19:11:19.528437+00:00",
+    "result": "[STUB] Rolled back deployment 'payments-service' in namespace 'default'",
+    "executed_at": "2026-07-02T19:11:19.553306+00:00"
+  },
+  {
+    "id": "851ae8ec",
+    "tool": "rollback_deployment",
+    "params": {
+      "deployment": "payments-service",
+      "namespace": "default"
+    },
+    "context": "payments-pod-7f4b is in CrashLoopBackOff with 12 restarts; logs show DB connection refused; v2.4.1 deploy failed \u2014 rolling back to v2.4.0",
+    "status": "executed",
+    "submitted_at": "2026-07-02T19:14:04.941062+00:00",
+    "approved_at": "2026-07-02T19:14:25.228198+00:00",
+    "result": "[STUB] Rolled back deployment 'payments-service' in namespace 'default'",
+    "executed_at": "2026-07-02T19:14:25.247234+00:00"
   }
 ]
