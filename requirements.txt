@@ -1,3 +1,7 @@
-PyGithub
-python-dotenv
-filelock
+mcp==1.28.1
+PyGithub==2.9.1
+python-dotenv==1.2.2
+filelock==3.29.4
+kubernetes==36.0.2
+jira==3.10.5
+slack_sdk==3.43.0

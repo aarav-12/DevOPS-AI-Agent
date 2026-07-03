@@ -1,5 +1,10 @@
 .env
 .env.*
+!.env.example
 __pycache__/
 *.pyc
 *.pyo
+audit.jsonl
+approval_queue.json
+approval_queue.json.lock
+alert_dedupe.json

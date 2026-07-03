@@ -1,0 +1,203 @@
+2026-07-03T12:00:07Z WARN  cache miss key=payment:pay_42098
+2026-07-03T12:00:10Z INFO  request completed method=GET path=/api/payments/health status=200 latency_ms=147
+2026-07-03T12:00:16Z INFO  request completed method=GET path=/api/payments/health status=200 latency_ms=31
+2026-07-03T12:00:19Z INFO  request completed method=GET path=/api/payments/health status=200 latency_ms=151
+2026-07-03T12:00:26Z INFO  cache hit key=payment:pay_38893
+2026-07-03T12:00:31Z INFO  request completed method=GET path=/api/payments/health status=200 latency_ms=48
+2026-07-03T12:00:35Z INFO  request completed method=POST path=/api/payments/charge status=200 latency_ms=94
+2026-07-03T12:00:37Z INFO  request completed method=GET path=/api/payments/pay_89131/status status=200 latency_ms=96
+2026-07-03T12:00:41Z INFO  webhook dispatched provider=stripe event=charge.succeeded
+2026-07-03T12:00:43Z INFO  db query executed query=select_payment duration_ms=28
+2026-07-03T12:00:47Z INFO  cache hit key=payment:pay_85674
+2026-07-03T12:00:50Z INFO  request completed method=GET path=/api/payments/health status=200 latency_ms=177
+2026-07-03T12:00:58Z INFO  request completed method=GET path=/api/payments/health status=200 latency_ms=67
+2026-07-03T12:01:03Z INFO  webhook dispatched provider=stripe event=charge.succeeded
+2026-07-03T12:01:07Z INFO  webhook dispatched provider=stripe event=charge.succeeded
+2026-07-03T12:01:14Z WARN  cache miss key=payment:pay_80010
+2026-07-03T12:01:21Z INFO  db query executed query=select_payment duration_ms=105
+2026-07-03T12:01:28Z INFO  request completed method=POST path=/api/payments/charge status=200 latency_ms=91
+2026-07-03T12:01:31Z INFO  request completed method=GET path=/api/payments/pay_45093/status status=200 latency_ms=110
+2026-07-03T12:01:33Z INFO  cache hit key=payment:pay_37869
+2026-07-03T12:01:40Z INFO  webhook dispatched provider=stripe event=charge.succeeded
+2026-07-03T12:01:44Z INFO  webhook dispatched provider=stripe event=charge.succeeded
+2026-07-03T12:01:48Z INFO  db query executed query=select_payment duration_ms=157
+2026-07-03T12:01:52Z INFO  request completed method=POST path=/api/payments/charge status=200 latency_ms=138
+2026-07-03T12:01:54Z INFO  request completed method=GET path=/api/payments/health status=200 latency_ms=47
+2026-07-03T12:01:57Z INFO  db query executed query=select_payment duration_ms=160
+2026-07-03T12:02:02Z INFO  db query executed query=select_payment duration_ms=143
+2026-07-03T12:02:08Z INFO  request completed method=GET path=/api/payments/health status=200 latency_ms=37
+2026-07-03T12:02:14Z INFO  webhook dispatched provider=stripe event=charge.succeeded
+2026-07-03T12:02:18Z INFO  db query executed query=select_payment duration_ms=8
+2026-07-03T12:02:24Z INFO  cache hit key=payment:pay_91959
+2026-07-03T12:02:28Z INFO  cache hit key=payment:pay_36071
+2026-07-03T12:02:31Z INFO  request completed method=POST path=/api/payments/charge status=200 latency_ms=146
+2026-07-03T12:02:33Z INFO  db query executed query=select_payment duration_ms=12
+2026-07-03T12:02:37Z INFO  request completed method=GET path=/api/payments/pay_17592/status status=200 latency_ms=69
+2026-07-03T12:02:40Z INFO  request completed method=GET path=/api/payments/health status=200 latency_ms=29
+2026-07-03T12:02:48Z WARN  cache miss key=payment:pay_26828
+2026-07-03T12:02:55Z INFO  cache hit key=payment:pay_44741
+2026-07-03T12:03:01Z INFO  db query executed query=select_payment duration_ms=62
+2026-07-03T12:03:09Z INFO  request completed method=POST path=/api/payments/charge status=200 latency_ms=87
+2026-07-03T12:03:16Z INFO  db query executed query=select_payment duration_ms=140
+2026-07-03T12:03:18Z INFO  request completed method=GET path=/api/payments/health status=200 latency_ms=94
+2026-07-03T12:03:24Z INFO  cache hit key=payment:pay_10942
+2026-07-03T12:03:26Z INFO  request completed method=GET path=/api/payments/health status=200 latency_ms=66
+2026-07-03T12:03:28Z INFO  request completed method=GET path=/api/payments/health status=200 latency_ms=139
+2026-07-03T12:03:32Z INFO  request completed method=POST path=/api/payments/charge status=200 latency_ms=146
+2026-07-03T12:03:39Z INFO  cache hit key=payment:pay_71953
+2026-07-03T12:03:42Z INFO  db query executed query=select_payment duration_ms=56
+2026-07-03T12:03:44Z INFO  request completed method=GET path=/api/payments/pay_63883/status status=200 latency_ms=116
+2026-07-03T12:03:49Z INFO  request completed method=GET path=/api/payments/health status=200 latency_ms=180
+2026-07-03T12:03:56Z WARN  retrying upstream call provider=stripe attempt=2
+2026-07-03T12:03:59Z INFO  cache hit key=payment:pay_28373
+2026-07-03T12:04:04Z INFO  db query executed query=select_payment duration_ms=71
+2026-07-03T12:04:09Z INFO  cache hit key=payment:pay_16630
+2026-07-03T12:04:16Z INFO  request completed method=GET path=/api/payments/health status=200 latency_ms=31
+2026-07-03T12:04:19Z INFO  db query executed query=select_payment duration_ms=62
+2026-07-03T12:04:21Z INFO  request completed method=GET path=/api/payments/health status=200 latency_ms=107
+2026-07-03T12:04:29Z INFO  request completed method=GET path=/api/payments/pay_82845/status status=200 latency_ms=116
+2026-07-03T12:04:36Z INFO  request completed method=POST path=/api/payments/charge status=200 latency_ms=56
+2026-07-03T12:04:39Z INFO  cache hit key=payment:pay_17989
+2026-07-03T12:04:46Z INFO  request completed method=GET path=/api/payments/health status=200 latency_ms=157
+2026-07-03T12:04:52Z INFO  cache hit key=payment:pay_17455
+2026-07-03T12:04:58Z WARN  slow query detected query=select_payment duration_ms=25
+2026-07-03T12:05:00Z INFO  request completed method=POST path=/api/payments/charge status=200 latency_ms=111
+2026-07-03T12:05:06Z INFO  cache hit key=payment:pay_91183
+2026-07-03T12:05:08Z INFO  cache hit key=payment:pay_78522
+2026-07-03T12:05:12Z INFO  request completed method=POST path=/api/payments/charge status=200 latency_ms=179
+2026-07-03T12:05:15Z INFO  request completed method=POST path=/api/payments/charge status=200 latency_ms=179
+2026-07-03T12:05:19Z INFO  request completed method=GET path=/api/payments/health status=200 latency_ms=10
+2026-07-03T12:05:25Z INFO  request completed method=GET path=/api/payments/health status=200 latency_ms=26
+2026-07-03T12:05:28Z INFO  request completed method=POST path=/api/payments/charge status=200 latency_ms=97
+2026-07-03T12:05:31Z INFO  request completed method=POST path=/api/payments/charge status=200 latency_ms=120
+2026-07-03T12:05:38Z INFO  webhook dispatched provider=stripe event=charge.succeeded
+2026-07-03T12:05:45Z INFO  request completed method=GET path=/api/payments/pay_23577/status status=200 latency_ms=177
+2026-07-03T12:05:48Z INFO  request completed method=GET path=/api/payments/health status=200 latency_ms=149
+2026-07-03T12:05:52Z INFO  request completed method=POST path=/api/payments/charge status=200 latency_ms=95
+2026-07-03T12:05:59Z INFO  request completed method=GET path=/api/payments/pay_74032/status status=200 latency_ms=137
+2026-07-03T12:06:03Z INFO  request completed method=GET path=/api/payments/health status=200 latency_ms=31
+2026-07-03T12:06:08Z INFO  request completed method=GET path=/api/payments/health status=200 latency_ms=8
+2026-07-03T12:06:16Z INFO  request completed method=GET path=/api/payments/pay_67912/status status=200 latency_ms=49
+2026-07-03T12:06:22Z INFO  cache hit key=payment:pay_24663
+2026-07-03T12:06:24Z INFO  webhook dispatched provider=stripe event=charge.succeeded
+2026-07-03T12:06:26Z INFO  cache hit key=payment:pay_29410
+2026-07-03T12:06:31Z INFO  request completed method=GET path=/api/payments/pay_15229/status status=200 latency_ms=101
+2026-07-03T12:06:35Z INFO  request completed method=POST path=/api/payments/charge status=200 latency_ms=178
+2026-07-03T12:06:39Z INFO  db query executed query=select_payment duration_ms=166
+2026-07-03T12:06:42Z INFO  request completed method=POST path=/api/payments/charge status=200 latency_ms=113
+2026-07-03T12:06:45Z INFO  request completed method=GET path=/api/payments/pay_97806/status status=200 latency_ms=113
+2026-07-03T12:06:53Z INFO  request completed method=POST path=/api/payments/charge status=200 latency_ms=76
+2026-07-03T12:07:01Z INFO  db query executed query=select_payment duration_ms=17
+2026-07-03T12:07:04Z INFO  db query executed query=select_payment duration_ms=97
+2026-07-03T12:07:12Z INFO  request completed method=POST path=/api/payments/charge status=200 latency_ms=65
+2026-07-03T12:07:19Z INFO  request completed method=GET path=/api/payments/pay_19099/status status=200 latency_ms=79
+2026-07-03T12:07:27Z INFO  webhook dispatched provider=stripe event=charge.succeeded
+2026-07-03T12:07:34Z INFO  cache hit key=payment:pay_13617
+2026-07-03T12:07:36Z INFO  request completed method=GET path=/api/payments/pay_86099/status status=200 latency_ms=53
+2026-07-03T12:07:40Z WARN  cache miss key=payment:pay_55309
+2026-07-03T12:07:47Z INFO  db query executed query=select_payment duration_ms=163
+2026-07-03T12:07:49Z INFO  cache hit key=payment:pay_43386
+2026-07-03T12:07:51Z INFO  request completed method=GET path=/api/payments/health status=200 latency_ms=141
+2026-07-03T12:07:58Z INFO  webhook dispatched provider=stripe event=charge.succeeded
+2026-07-03T12:08:02Z INFO  webhook dispatched provider=stripe event=charge.succeeded
+2026-07-03T12:08:06Z INFO  request completed method=GET path=/api/payments/health status=200 latency_ms=84
+2026-07-03T12:08:10Z INFO  request completed method=GET path=/api/payments/pay_48752/status status=200 latency_ms=111
+2026-07-03T12:08:16Z INFO  db query executed query=select_payment duration_ms=178
+2026-07-03T12:08:23Z INFO  request completed method=POST path=/api/payments/charge status=200 latency_ms=165
+2026-07-03T12:08:27Z INFO  request completed method=GET path=/api/payments/health status=200 latency_ms=85
+2026-07-03T12:08:30Z INFO  cache hit key=payment:pay_95813
+2026-07-03T12:08:34Z INFO  db query executed query=select_payment duration_ms=180
+2026-07-03T12:08:40Z INFO  webhook dispatched provider=stripe event=charge.succeeded
+2026-07-03T12:08:42Z INFO  webhook dispatched provider=stripe event=charge.succeeded
+2026-07-03T12:08:46Z WARN  slow query detected query=select_payment duration_ms=180
+2026-07-03T12:08:49Z INFO  request completed method=POST path=/api/payments/charge status=200 latency_ms=14
+2026-07-03T12:08:52Z INFO  cache hit key=payment:pay_69692
+2026-07-03T12:08:57Z INFO  cache hit key=payment:pay_60328
+2026-07-03T12:09:02Z INFO  request completed method=POST path=/api/payments/charge status=200 latency_ms=175
+2026-07-03T12:09:10Z INFO  request completed method=GET path=/api/payments/health status=200 latency_ms=116
+2026-07-03T12:09:13Z INFO  webhook dispatched provider=stripe event=charge.succeeded
+2026-07-03T12:09:15Z INFO  request completed method=GET path=/api/payments/health status=200 latency_ms=124
+2026-07-03T12:09:23Z INFO  cache hit key=payment:pay_88047
+2026-07-03T12:09:27Z INFO  db query executed query=select_payment duration_ms=164
+2026-07-03T12:09:32Z INFO  cache hit key=payment:pay_30861
+2026-07-03T12:09:39Z INFO  db query executed query=select_payment duration_ms=74
+2026-07-03T12:09:47Z INFO  cache hit key=payment:pay_92149
+2026-07-03T12:09:50Z INFO  request completed method=GET path=/api/payments/health status=200 latency_ms=81
+2026-07-03T12:09:54Z INFO  cache hit key=payment:pay_28136
+2026-07-03T12:09:57Z INFO  webhook dispatched provider=stripe event=charge.succeeded
+2026-07-03T12:09:59Z INFO  request completed method=GET path=/api/payments/pay_71069/status status=200 latency_ms=146
+2026-07-03T12:10:04Z WARN  retrying upstream call provider=stripe attempt=2
+2026-07-03T12:10:11Z WARN  cache miss key=payment:pay_72518
+2026-07-03T12:10:13Z INFO  request completed method=GET path=/api/payments/pay_64921/status status=200 latency_ms=107
+2026-07-03T12:10:19Z INFO  cache hit key=payment:pay_38906
+2026-07-03T12:10:24Z INFO  db query executed query=select_payment duration_ms=132
+2026-07-03T12:10:29Z INFO  webhook dispatched provider=stripe event=charge.succeeded
+2026-07-03T12:10:37Z INFO  request completed method=POST path=/api/payments/charge status=200 latency_ms=167
+2026-07-03T12:10:39Z INFO  cache hit key=payment:pay_96900
+2026-07-03T12:10:41Z WARN  retrying upstream call provider=stripe attempt=2
+2026-07-03T12:10:44Z WARN  retrying upstream call provider=stripe attempt=2
+2026-07-03T12:10:49Z INFO  db query executed query=select_payment duration_ms=79
+2026-07-03T12:10:53Z INFO  db query executed query=select_payment duration_ms=12
+2026-07-03T12:10:55Z INFO  request completed method=GET path=/api/payments/pay_95215/status status=200 latency_ms=65
+2026-07-03T12:10:57Z INFO  webhook dispatched provider=stripe event=charge.succeeded
+2026-07-03T12:11:00Z INFO  request completed method=GET path=/api/payments/health status=200 latency_ms=167
+2026-07-03T12:11:03Z INFO  webhook dispatched provider=stripe event=charge.succeeded
+2026-07-03T12:11:06Z INFO  request completed method=GET path=/api/payments/pay_31992/status status=200 latency_ms=102
+2026-07-03T12:11:12Z INFO  webhook dispatched provider=stripe event=charge.succeeded
+2026-07-03T12:11:16Z WARN  slow query detected query=select_payment duration_ms=87
+2026-07-03T12:11:23Z INFO  db query executed query=select_payment duration_ms=109
+2026-07-03T12:11:25Z INFO  webhook dispatched provider=stripe event=charge.succeeded
+2026-07-03T12:11:32Z INFO  webhook dispatched provider=stripe event=charge.succeeded
+2026-07-03T12:11:46Z INFO  deploy completed service=payments-service version=v2.4.1 strategy=rolling
+2026-07-03T12:11:49Z INFO  new pods scheduled replicas=3 image=payments-service:v2.4.1
+2026-07-03T12:11:59Z INFO  webhook dispatched provider=stripe event=charge.succeeded
+2026-07-03T12:12:09Z INFO  webhook dispatched provider=stripe event=charge.succeeded
+2026-07-03T12:12:19Z INFO  db query executed query=select_payment duration_ms=11
+2026-07-03T12:12:25Z INFO  webhook dispatched provider=stripe event=charge.succeeded
+2026-07-03T12:12:37Z INFO  request completed method=POST path=/api/payments/charge status=200 latency_ms=47
+2026-07-03T12:12:50Z INFO  cache hit key=payment:pay_45400
+2026-07-03T12:15:20Z ERROR request failed method=POST path=/api/payments/charge status=503 error="db unavailable"
+2026-07-03T12:15:24Z ERROR request failed method=POST path=/api/payments/charge status=503 error="db unavailable"
+2026-07-03T12:15:29Z WARN  db connection pool exhausted, queuing request
+2026-07-03T12:15:32Z ERROR failed to acquire db connection pool_size=10 in_use=10
+2026-07-03T12:15:33Z WARN  db connection pool exhausted, queuing request
+2026-07-03T12:15:37Z ERROR failed to acquire db connection pool_size=10 in_use=10
+2026-07-03T12:15:41Z FATAL failed to acquire db connection after 3 retries
+2026-07-03T12:15:46Z ERROR request failed method=POST path=/api/payments/charge status=503 error="db unavailable"
+2026-07-03T12:15:49Z ERROR connection refused: postgres://payments-db:5432
+2026-07-03T12:15:53Z WARN  db connection pool exhausted, queuing request
+2026-07-03T12:15:55Z ERROR request failed method=POST path=/api/payments/charge status=503 error="db unavailable"
+2026-07-03T12:15:57Z WARN  db connection pool exhausted, queuing request
+2026-07-03T12:16:00Z WARN  db connection pool exhausted, queuing request
+2026-07-03T12:16:03Z FATAL failed to acquire db connection after 3 retries
+2026-07-03T12:16:06Z FATAL failed to acquire db connection after 3 retries
+2026-07-03T12:16:07Z FATAL failed to acquire db connection after 3 retries
+2026-07-03T12:16:09Z ERROR connection refused: postgres://payments-db:5432
+2026-07-03T12:16:11Z ERROR request failed method=POST path=/api/payments/charge status=503 error="db unavailable"
+2026-07-03T12:16:15Z FATAL failed to acquire db connection after 3 retries
+2026-07-03T12:16:17Z ERROR request failed method=POST path=/api/payments/charge status=503 error="db unavailable"
+2026-07-03T12:16:21Z ERROR request failed method=POST path=/api/payments/charge status=503 error="db unavailable"
+2026-07-03T12:16:22Z ERROR connection refused: postgres://payments-db:5432
+2026-07-03T12:16:25Z ERROR failed to acquire db connection pool_size=10 in_use=10
+2026-07-03T12:16:29Z ERROR failed to acquire db connection pool_size=10 in_use=10
+2026-07-03T12:16:32Z FATAL failed to acquire db connection after 3 retries
+2026-07-03T12:16:35Z ERROR request failed method=POST path=/api/payments/charge status=503 error="db unavailable"
+2026-07-03T12:16:40Z FATAL failed to acquire db connection after 3 retries
+2026-07-03T12:16:43Z ERROR request failed method=POST path=/api/payments/charge status=503 error="db unavailable"
+2026-07-03T12:16:48Z WARN  db connection pool exhausted, queuing request
+2026-07-03T12:16:51Z ERROR request failed method=POST path=/api/payments/charge status=503 error="db unavailable"
+2026-07-03T12:16:54Z WARN  db connection pool exhausted, queuing request
+2026-07-03T12:16:57Z ERROR failed to acquire db connection pool_size=10 in_use=10
+2026-07-03T12:16:58Z ERROR failed to acquire db connection pool_size=10 in_use=10
+2026-07-03T12:17:01Z ERROR connection refused: postgres://payments-db:5432
+2026-07-03T12:17:06Z ERROR failed to acquire db connection pool_size=10 in_use=10
+2026-07-03T12:17:09Z FATAL panic: unrecoverable db outage, initiating pod restart
+2026-07-03T12:17:11Z INFO  pod terminating reason=liveness_probe_failed
+2026-07-03T12:17:17Z ERROR request failed method=POST path=/api/payments/charge status=503 error="db unavailable"
+2026-07-03T12:17:24Z FATAL failed to acquire db connection after 3 retries
+2026-07-03T12:17:31Z ERROR connection refused: postgres://payments-db:5432
+2026-07-03T12:17:37Z WARN  db connection pool exhausted, queuing request
+2026-07-03T12:17:43Z WARN  db connection pool exhausted, queuing request
+2026-07-03T12:17:48Z WARN  db connection pool exhausted, queuing request
+2026-07-03T12:17:51Z FATAL failed to acquire db connection after 3 retries
+2026-07-03T12:17:56Z WARN  db connection pool exhausted, queuing request

@@ -1,8 +1,10 @@
 import os
-from github import Github
-# from tools.base import execute_tool
+
+from github import Github, GithubException
 
 _client = None
+
+MAX_COMMITS = 20
 
 
 def get_client():
@@ -19,6 +21,7 @@ def get_recent_commits_impl(
     branch: str = "main",
     n: int = 5
 ) -> str:
+    n = max(1, min(n, MAX_COMMITS))
 
     repo = get_client().get_repo(repo)
 
@@ -36,39 +39,52 @@ def get_recent_commits_impl(
             f"{c.commit.message.splitlines()[0]}"
         )
 
-    return "\n".join(lines)
+    return "\n".join(lines) or "No commits found."
 
 
 def get_pr_status_impl(
     repo: str,
     pr_number: int
 ) -> str:
+    repo_name = repo
+    try:
+        repo = get_client().get_repo(repo)
+        pr = repo.get_pull(pr_number)
+    except GithubException as e:
+        if e.status == 404:
+            return f"PR #{pr_number} not found in {repo_name}."
+        return f"GitHub API error: {e.status} {e.data.get('message', str(e))}"
 
-    repo = get_client().get_repo(repo)
+    pr_commits = list(pr.get_commits())
+    if pr_commits:
+        checks = pr_commits[-1].get_check_runs()
+        check_summary = ", ".join(
+            f"{c.name}: {c.conclusion}" for c in checks
+        ) or "no checks"
+    else:
+        check_summary = "no checks"
 
-    pr = repo.get_pull(pr_number)
-
-    checks = list(
-        pr.get_commits()
-    )[-1].get_check_runs()
-
-    check_summary = ", ".join(
-        [
-            f"{c.name}: {c.conclusion}"
-            for c in checks
-        ]
-    ) or "no checks"
+    if pr.mergeable is None:
+        mergeable = "unknown (GitHub is still computing mergeability)"
+    else:
+        mergeable = pr.mergeable
 
     return (
         f"PR #{pr_number}: {pr.title}\n"
         f"Status: {pr.state}\n"
         f"Checks: {check_summary}\n"
-        f"Mergeable: {pr.mergeable}"
+        f"Mergeable: {mergeable}"
     )
 
 
 def get_workflow_run_impl(repo: str, run_id: int) -> str:
-    workflow_run = get_client().get_repo(repo).get_workflow_run(run_id)
+    try:
+        workflow_run = get_client().get_repo(repo).get_workflow_run(run_id)
+    except GithubException as e:
+        if e.status == 404:
+            return f"Workflow run #{run_id} not found in {repo}."
+        return f"GitHub API error: {e.status} {e.data.get('message', str(e))}"
+
     return (
         f"Run #{run_id}: {workflow_run.name}\n"
         f"Status:     {workflow_run.status}\n"

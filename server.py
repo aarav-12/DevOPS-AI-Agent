@@ -50,7 +50,9 @@ def get_system_status() -> str:
 
 @mcp.tool()
 def list_pods(namespace: str = "default") -> str:
-    """List all Kubernetes pods in a namespace with their current status."""
+    """List all Kubernetes pods in a namespace with their current status.
+    Use when checking whether a service is healthy — restart count is the
+    cheapest signal that a "Running" pod is actually crash-looping."""
     return execute_tool(
         "list_pods",
         {"namespace": namespace},
@@ -59,18 +61,20 @@ def list_pods(namespace: str = "default") -> str:
 
 
 @mcp.tool()
-def get_pod_logs(pod: str, namespace: str = "default", tail: int = 50) -> str:
-    """Fetch the most recent log lines from a specific pod."""
+def get_pod_logs(pod: str, namespace: str = "default", tail_lines: int = 30) -> str:
+    """Fetch the most recent log lines from a specific pod (capped at 200 lines).
+    Use when diagnosing crashes or restarts."""
     return execute_tool(
         "get_pod_logs",
-        {"pod": pod, "namespace": namespace, "tail": tail},
-        lambda: get_pod_logs_impl(pod, namespace, tail),
+        {"pod": pod, "namespace": namespace, "tail_lines": tail_lines},
+        lambda: get_pod_logs_impl(pod, namespace, tail_lines),
     )
 
 
 @mcp.tool()
 def get_deployment_status(deployment: str, namespace: str = "default") -> str:
-    """Get the rollout status and replica health of a Kubernetes deployment."""
+    """Get the rollout status and replica health of a Kubernetes deployment.
+    Use to confirm whether a rollout is stuck before deciding to roll it back."""
     return execute_tool(
         "get_deployment_status",
         {"deployment": deployment, "namespace": namespace},
@@ -79,18 +83,21 @@ def get_deployment_status(deployment: str, namespace: str = "default") -> str:
 
 
 @mcp.tool()
-def get_recent_commits(repo: str, branch: str = "main") -> str:
-    """Get the most recent commits on a GitHub repository branch."""
+def get_recent_commits(repo: str, branch: str = "main", n: int = 5) -> str:
+    """Get the most recent commits on a GitHub repository branch (capped at 20).
+    Use when triaging an incident to answer "what changed?"."""
     return execute_tool(
         "get_recent_commits",
-        {"repo": repo, "branch": branch},
-        lambda: get_recent_commits_impl(repo, branch),
+        {"repo": repo, "branch": branch, "n": n},
+        lambda: get_recent_commits_impl(repo, branch, n),
     )
 
 
 @mcp.tool()
 def get_pr_status(repo: str, pr_number: int) -> str:
-    """Get the title, state, CI checks, and mergeability of a GitHub pull request."""
+    """Get the title, state, CI checks, and mergeability of a GitHub pull request.
+    Use when a suspect commit traces back to a PR and you need to know if it
+    passed CI before it merged."""
     return execute_tool(
         "get_pr_status",
         {"repo": repo, "pr_number": pr_number},
@@ -100,7 +107,9 @@ def get_pr_status(repo: str, pr_number: int) -> str:
 
 @mcp.tool()
 def get_workflow_run(repo: str, run_id: int) -> str:
-    """Get the status and conclusion of a specific GitHub Actions workflow run."""
+    """Get the status and conclusion of a specific GitHub Actions workflow run.
+    Use to check whether a deploy pipeline actually succeeded before assuming
+    the running image matches the merged code."""
     return execute_tool(
         "get_workflow_run",
         {"repo": repo, "run_id": run_id},
@@ -110,7 +119,9 @@ def get_workflow_run(repo: str, run_id: int) -> str:
 
 @mcp.tool()
 def search_logs(query: str, service: str = "", since_minutes: int = 60) -> str:
-    """Search production logs for a query string, optionally filtered to one service."""
+    """Search production logs for a query string, optionally filtered to one service.
+    Use this first, before paging anyone or calling an external API — it's the
+    cheapest, fastest triage signal."""
     return execute_tool(
         "search_logs",
         {"query": query, "service": service, "since_minutes": since_minutes},
@@ -120,7 +131,8 @@ def search_logs(query: str, service: str = "", since_minutes: int = 60) -> str:
 
 @mcp.tool()
 def get_error_rate(service: str, window_minutes: int = 5) -> str:
-    """Get the current error rate percentage for a named service."""
+    """Get the current error rate percentage for a named service.
+    Use to quantify how bad an incident is or confirm a fix actually worked."""
     return execute_tool(
         "get_error_rate",
         {"service": service, "window_minutes": window_minutes},
@@ -130,7 +142,9 @@ def get_error_rate(service: str, window_minutes: int = 5) -> str:
 
 @mcp.tool()
 def get_ticket_status(ticket_id: str) -> str:
-    """Get the current status, assignee, and priority of a Jira ticket."""
+    """Get the current status, assignee, and priority of a Jira ticket.
+    Use to check whether an incident already has an open ticket before
+    creating a duplicate."""
     return execute_tool(
         "get_ticket_status",
         {"ticket_id": ticket_id},
@@ -147,7 +161,9 @@ def get_ticket_status(ticket_id: str) -> str:
 def create_jira_ticket(
     project: str, summary: str, description: str, priority: str = "High"
 ) -> str:
-    """Create a new Jira ticket in the given project."""
+    """Create a new Jira ticket in the given project.
+    Use once you've confirmed an incident is real and needs a paper trail —
+    not for every anomaly you check and rule out."""
     return execute_tool(
         "create_jira_ticket",
         {"project": project, "summary": summary, "description": description, "priority": priority},
@@ -157,7 +173,8 @@ def create_jira_ticket(
 
 @mcp.tool()
 def add_jira_comment(ticket_id: str, comment: str) -> str:
-    """Append a comment to an existing Jira ticket."""
+    """Append a comment to an existing Jira ticket.
+    Use to post findings or status updates to a ticket that already exists."""
     return execute_tool(
         "add_jira_comment",
         {"ticket_id": ticket_id, "comment": comment},
@@ -167,7 +184,8 @@ def add_jira_comment(ticket_id: str, comment: str) -> str:
 
 @mcp.tool()
 def post_slack_message(channel: str, message: str) -> str:
-    """Post a message to a Slack channel."""
+    """Post a message to a Slack channel.
+    Use for routine updates that don't warrant a full incident alert."""
     return execute_tool(
         "post_slack_message",
         {"channel": channel, "message": message},
